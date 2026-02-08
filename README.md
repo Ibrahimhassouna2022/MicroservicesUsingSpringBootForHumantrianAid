@@ -17,7 +17,6 @@ This project is intended for **learning purposes** and as a reference for develo
 To run this microservices project successfully, please follow the steps below.  
  **Apache NetBeans IDE is required** to open and run the services.
 
----
 
 ##  Prerequisites
 
@@ -26,10 +25,40 @@ To run this microservices project successfully, please follow the steps below.
 - Maven
 - Internet connection (for dependency downloads)
 
----
 
-##  Steps
+## Steps
 
-### 1️⃣ Clone the repository
-```bash
-git clone https://github.com/Ibrahimhassouna2022/MicroservicesUsingSpringBootForHumantrianAid.git
+### 1️⃣ Open Apache NetBeans
+- Launch **Apache NetBeans IDE**
+- Click on **File → Open Project**
+- Select the cloned project folder
+
+
+### 2️⃣ Load Maven Projects
+- NetBeans will automatically detect all microservices as **Maven projects**
+- Wait until all dependencies are downloaded successfully  
+  ⏳ (This may take a few minutes on the first run)
+
+
+### 3️⃣ Run the Eureka Discovery Service
+- Locate the `registery` (**Eureka Server**) project
+- Right-click on it → **Run**
+- Make sure the Eureka Server is running before starting any other service
+
+
+### 4️⃣ Run the API Gateway
+- Locate the `clude-gateway` project
+- Right-click → **Run**
+- The API Gateway will handle routing requests to the registered microservices
+
+
+### 5️⃣ Run the Microservices
+- Start each microservice one by one (e.g. `Beneficiariesservice`, `Financeservice`)
+- Right-click on each service → **Run**
+- Ensure that each service registers successfully in the Eureka Dashboard
+
+
+### 6️⃣ Verify Services
+- Open a browser and access the Eureka Dashboard:
+```text
+http://localhost:8761
